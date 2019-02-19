@@ -15,4 +15,10 @@ const cartWrapper = document.querySelector('.cart__wrapper'), //обёртка �
 function openCart() {
     cart.style.display = 'block';
     document.body.style.overflow = 'hidden';
-}    
+} 
+
+//функция закрытия корзины [X]
+function closeCart(){
+    cart.style.display = 'none';
+    document.body.style.overflow = '';
+}
