@@ -10,3 +10,9 @@ const cartWrapper = document.querySelector('.cart__wrapper'), //обёртка �
     totalCost = document.querySelector('.cart__total > span'), //общая стоимость всех товаров
     title = document.querySelectorAll('.goods_title');          
     //title для фукции которая делает одинаковыми ячейки с товарами 
+
+    //функция открыть корзину
+function openCart() {
+    cart.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}    
