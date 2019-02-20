@@ -58,6 +58,7 @@ goodsBtn.forEach(function(btn, i) {
         }
         
         calcTotal(); // сумма товаров в корзине
+        removeFromCart(); //удаление из корзины
     });
 } );
 
@@ -106,6 +107,17 @@ function calcTotal() {
     totalCost.textContent = total;
 }
 
+//удаление из корзины
+function removeFromCart() {
+    const removeBtn = cartWrapper.querySelectorAll('.goods__item-remove');
+    removeBtn.forEach(function(btn) {
+        btn.addEventListener('click', () => {
+            btn.parentElement.remove();
+            calcGoods(0);
+            calcTotal();
+        });
+    });
+}
 
 // скидка на курс JS-PF
 }); //конец window.addEventListener
