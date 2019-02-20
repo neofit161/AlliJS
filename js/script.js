@@ -29,6 +29,7 @@ function closeCart(){
 open.addEventListener('click', openCart);
 close.addEventListener('click', closeCart);
 
+
 //добавление товара в корзину
 goodsBtn.forEach(function(btn, i) {
     btn.addEventListener('click', () => {
@@ -38,15 +39,16 @@ goodsBtn.forEach(function(btn, i) {
             empty = cartWrapper.querySelector('.empty');
 
         trigger.remove();  
+
+        //анимация добавления в корзину
+        showConfirm();
+
         //удаление с карточки кнопки "Добавить в корзину"
-        
         removeBtn.classList.add('goods__item-remove');
         removeBtn.innerHTML = '&times';
-        item.appendChild(removeBtn);
-        //добавляем кнопку [Х] в карточку товара
+        item.appendChild(removeBtn); //добавляем кнопку [Х] в карточку товара
 
-        cartWrapper.appendChild(item);
-        //перемещиние карточки товара в окно корзины
+        cartWrapper.appendChild(item);//перемещиние карточки товара в окно корзины
 
         if(empty) {
             empty.remove();
@@ -65,6 +67,26 @@ titles.forEach(function(item) {
         item.textContent = str;
     }
 });
+
+//анимация добавления в корзину
+function showConfirm(){
+    confirm.style.display = 'block';
+    let counter = 100;
+    const id = setInterval(frame, 10);
+
+    function frame() {
+        if(counter == 10) {
+            clearInterval(id); 
+            confirm.style.display = 'none';
+        } else {
+            counter--;
+            confirm.style.transform = `translateY(-${counter}px)`;
+            confirm.style.opacity = '.' + counter;
+        }
+        
+    }
+}
+
 
 
 // скидка на курс JS-PF
