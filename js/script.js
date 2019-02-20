@@ -109,7 +109,7 @@ function calcTotal() {
     });
     totalCost.textContent = totalPrice;
     
-    //возврат фразы: Ваша корзина пуста
+    //Ваша корзина пуста
     let empty = cartWrapper.querySelector('.empty');
         if (totalPrice == 0) {
             empty.style.display = 'block';
