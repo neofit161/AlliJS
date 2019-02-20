@@ -43,6 +43,9 @@ goodsBtn.forEach(function(btn, i) {
         //анимация добавления в корзину
         showConfirm();
 
+        //счетчик количества товаров
+        calcGoods();
+
         //удаление с карточки кнопки "Добавить в корзину"
         removeBtn.classList.add('goods__item-remove');
         removeBtn.innerHTML = '&times';
@@ -87,7 +90,11 @@ function showConfirm(){
     }
 }
 
-
+//счетчик количества товаров в корзине
+function calcGoods() {
+    const items = cartWrapper.querySelectorAll('.goods__item');
+    badge.textContent = items.length + 1;
+}
 
 // скидка на курс JS-PF
 }); //конец window.addEventListener
