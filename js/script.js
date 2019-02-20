@@ -10,7 +10,7 @@ const cartWrapper = document.querySelector('.cart__wrapper'), //обёртка �
     confirm = document.querySelector('.confirm'),             // все товары 
     badge = document.querySelector('.nav__badge'),            //счетчик кол-ва товара в корзине 
     totalCost = document.querySelector('.cart__total > span'), //общая стоимость всех товаров
-    title = document.querySelectorAll('.goods_title');          
+    titles = document.querySelectorAll('.goods__title');        //обрезает заголовки  
     //title для фукции которая делает одинаковыми ячейки с товарами 
 
     //функция открыть корзину
@@ -56,4 +56,16 @@ goodsBtn.forEach(function(btn, i) {
     })
 } );
 
+//обрезаем заголовки в карточке товара
+titles.forEach(function(item) {
+    if(item.textContent.length < 70) {
+        return;
+    }else{
+        const str = item.textContent.slice(0,71) + '...';
+        item.textContent = str;
+    }
 });
+
+
+// скидка на курс JS-PF
+}); //конец window.addEventListener
