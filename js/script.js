@@ -54,8 +54,10 @@ goodsBtn.forEach(function(btn, i) {
         cartWrapper.appendChild(item);//перемещиние карточки товара в окно корзины
 
         if(empty) { //если товар добавлен удалить фразу:"Ваша корзина пуста"
-            empty.remove();
+            empty.style.display = 'none';
         }
+
+        
         
         calcTotal(); // сумма товаров в корзине
         removeFromCart(); //удаление из корзины
@@ -98,13 +100,20 @@ function calcGoods(i) {
 }
 
 //сумма товаров
+
 function calcTotal() {
     const prices =  document.querySelectorAll('.cart__wrapper > .goods__item > .goods__price > span');
-    let total = 0;
+    let totalPrice = 0;
     prices.forEach(function(item) {
-        total += +item.textContent;
+        totalPrice += +item.textContent;
     });
-    totalCost.textContent = total;
+    totalCost.textContent = totalPrice;
+    
+    //возврат фразы: Ваша корзина пуста
+    let empty = cartWrapper.querySelector('.empty');
+        if (totalPrice == 0) {
+            empty.style.display = 'block';
+        }
 }
 
 //удаление из корзины
@@ -118,6 +127,7 @@ function removeFromCart() {
         });
     });
 }
+
 
 // скидка на курс JS-PF
 }); //конец window.addEventListener
