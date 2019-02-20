@@ -22,3 +22,7 @@ function closeCart(){
     cart.style.display = 'none';
     document.body.style.overflow = '';
 }
+
+//обработчик события
+open.addEventListener('click', openCart);
+close.addEventListener('click', closeCart);
