@@ -3,7 +3,7 @@ const cartWrapper = document.querySelector('.cart__wrapper'), //обёртка �
     cart = document.querySelector('.cart'),                   //корзина
     close = document.querySelector('.cart__close'),           //[Х] закрытие корзины  
     open = document.querySelector('#cart'),                   //открыть корзину, иконка корзины
-    goodsBtn = document.querySelectorAll('.goods__btn'),      //кнопка "добавить в корзину"
+    goodsBtn = document.querySelectorAll('.goods__btn'),      //все кнопки "добавить в корзину"
     products = document.querySelectorAll('.goods__item'),     //добавление в корзину
     confirm = document.querySelector('.confirm'),             // все товары 
     badge = document.querySelector('.nav__badge'),            //счетчик кол-ва товара в корзине 
@@ -26,3 +26,13 @@ function closeCart(){
 //обработчик события
 open.addEventListener('click', openCart);
 close.addEventListener('click', closeCart);
+
+//добавление товара в корзину
+goodsBtn.forEach(function(btn, i) {
+    btn.addEventListener('click', () => {
+        let item = products[i].cloneNode(true),
+            trigger = item.querySelector('button'),
+            removeBtn = document.createElement('div'),
+            empty = cartWrapper.querySelector('.empty');
+    })
+} );
