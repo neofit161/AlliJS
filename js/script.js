@@ -34,5 +34,13 @@ goodsBtn.forEach(function(btn, i) {
             trigger = item.querySelector('button'),
             removeBtn = document.createElement('div'),
             empty = cartWrapper.querySelector('.empty');
+
+        trigger.remove();  
+        //удаление с карточки кнопки "Добавить в корзину"
+        
+        removeBtn.classList.add('goods__item-remove');
+        removeBtn.innerHTML = '&times';
+        item.appendChild(removeBtn);
+        //добавляем кнопку [Х] в карточку товара
     })
 } );
