@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', () => {
+//скрипт начинает работать после загрузки DOM
 
 const cartWrapper = document.querySelector('.cart__wrapper'), //обёртка корзина
     cart = document.querySelector('.cart'),                   //корзина
@@ -53,3 +55,5 @@ goodsBtn.forEach(function(btn, i) {
         //"Ваша корзина пуста"
     })
 } );
+
+});
