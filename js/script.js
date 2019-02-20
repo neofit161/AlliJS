@@ -42,5 +42,14 @@ goodsBtn.forEach(function(btn, i) {
         removeBtn.innerHTML = '&times';
         item.appendChild(removeBtn);
         //добавляем кнопку [Х] в карточку товара
+
+        cartWrapper.appendChild(item);
+        //перемещиние карточки товара в окно корзины
+
+        if(empty) {
+            empty.remove();
+        }
+        //если товар добавлен удалить фразу:
+        //"Ваша корзина пуста"
     })
 } );
